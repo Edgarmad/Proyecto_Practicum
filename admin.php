@@ -25,6 +25,26 @@ if(!isset($_SESSION['rol'])){
     <!--ESTILOS PERSONALIZADOS-->
     <link rel="stylesheet" href="css/styles.css">
 </head>
+<?php
+
+//Obtener el nombre
+$query_nombre = 'SELECT nombre FROM datos_personales WHERE id = 4';
+$resultado_nombre = mysqli_query($connection, $query_nombre);
+if(!$resultado_nombre) {
+    die("Query Failed.");
+  }
+$row = mysqli_fetch_array($resultado_nombre);
+$nombre = $row['nombre'];
+//obtener el rol
+$query_rol = 'SELECT rol FROM roles WHERE id = 1';
+$resultado_rol = mysqli_query($connection, $query_rol);
+if(!$resultado_rol) {
+    die("Query Failed.");
+  }
+$row = mysqli_fetch_array($resultado_rol);
+$rol = $row['rol'];
+
+?>
 <body>
     <main class="perfil">
         <div class="dashboard c-blanco" id="dashboard">
@@ -50,8 +70,8 @@ if(!isset($_SESSION['rol'])){
             <div class="datos-perfil">
                 <div class="usuario-info">
                     <div>
-                        <h4>Luis Adrian</h4>
-                        <p>Administrador</p>
+                        <h4><?php echo $nombre;?></h4>
+                        <p><?php echo $rol;?></p>
                     </div>
                     <div>
                         <a href="resultado.html"><img src="imgBackups/photo-1491975474562-1f4e30bc9468.jfif" alt=""></a>
