@@ -86,7 +86,7 @@ if (continuarRegistroEmpresa && regresarEmpresa) {
                 cont++;
                 break;
             case 2:
-                continuarRegistroEmpresa.setAttribute('href', 'resultadoEmpresa.html');
+                continuarRegistroEmpresa.setAttribute('href', 'resultadoEmpresa.php');
                 cont = 2;
                 break;
             default:
@@ -97,7 +97,7 @@ if (continuarRegistroEmpresa && regresarEmpresa) {
         switch (cont) {
             case 0:
                 cont = 0;
-                regresarEmpresa.setAttribute('href', 'index.html');
+                regresarEmpresa.setAttribute('href', 'index.php');
                 regresarEmpresa.textContent = '';
                 break;
             case 1:

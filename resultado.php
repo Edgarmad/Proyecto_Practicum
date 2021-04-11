@@ -17,9 +17,9 @@
 
 <body>
     <div class="c-azul header">
-        <a href="registro.html" class=""><i class="fas fa-arrow-left"></i></a>
+        <a href="registro.php" class=""><i class="fas fa-arrow-left"></i></a>
         <h2 class="centrar-texto">Editar Perfil</h2>
-        <a href="perfilAlumno.html" class="btn btn-2 p-2">Confirmar</a>
+        <a href="perfilAlumno.php" class="btn btn-2 p-2">Confirmar</a>
     </div>
     <main class="contenedor">
         <div class="carta-xl">
@@ -35,7 +35,7 @@
                                 <label for="apellido ">Apellido:</label>
                             </div>
                             <div class="registro-2 centrar ">
-                                <input disabled type="text " name="nombre " id="nombre">
+                                <input disabled type="text " name="nombre " id="nombre" placeholder = "<?php $name = $_POST['nombre']; echo $name; ?>">  
                                 <input disabled type="text " name="apellido " id="apellido">
                             </div>
                             <div class="izquierda ">

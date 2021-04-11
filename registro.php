@@ -1,3 +1,4 @@
+<?php include("db.php")?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,7 +19,7 @@
 <body>
     <main class="flex-contenedor">
         <div class="flex-mitad bg-white m-0">
-            <form action=" # " class="contenedor registro-form height-100 ">
+            <form action="save_task_alumno.php" method = "POST" class="contenedor registro-form height-100 ">
                 <section class="" id="datosPersonales">
                     <ol class="pasos ">
                         <li class="centrar-texto focus ">1</li>
@@ -29,25 +30,25 @@
                     </ol>
                     <label for="imgInput" class="selectorImg"><i class="fas fa-camera"></i></label>
                     <input type="file" name="imgInput" id="imgInput" style="display: none;">
-                    <img class="img-form " src="imgBackups/photo-1491975474562-1f4e30bc9468.jfif " alt="foto_personal " id="imgLoad">
-                    <h4 class="izquierda ">Datos Personales</h4>
+                    <img class="img-form" src="imgBackups/photo-1491975474562-1f4e30bc9468.jfif " alt="foto_personal " id="imgLoad">
+                    <h4 class="izquierda">Datos Personales</h4>
                     <div class="labels-2 ">
-                        <label for="nombre ">Nombre(s):</label>
-                        <label for="apellido ">Apellido:</label>
+                        <label for="nombre">Nombre(s):</label>
+                        <label for="apellido">Apellido:</label>
                     </div>
                     <div class="registro-2 centrar ">
-                        <input type="text " name="nombre " id="nombre">
-                        <input type="text " name="apellido " id="apellido">
+                        <input type="text" name="nombre" id="nombre">
+                        <input type="text" name="apellido" id="apellido">
                     </div>
                     <div class="izquierda ">
                         <label for="correo ">Email:</label>
-                        <input type="email " name="correo " id="correo">
-                        <label for="telefono ">Telefono:</label>
-                        <input type="tel " name="telefono " id="telefono">
-                        <label for="direccion ">Dirección:</label>
-                        <textarea name="direccion " id="direccion " cols="30 " rows="10 "></textarea>
-                        <label for="nacioEn ">Lugar de nacimiento:</label>
-                        <input type="text " name="nacioEn " id="nacioEn">
+                        <input type="text" name="correo" id="correo">
+                        <label for="telefon">Telefono:</label>
+                        <input type="text" name="telefono" id="telefono">
+                        <label for="direccion">Dirección:</label>
+                        <textarea name="direccion" id="direccion" cols="30 " rows="10 "></textarea>
+                        <label for="nacioEn">Lugar de nacimiento:</label>
+                        <input type="text" name="nacioEn" id="nacioEn">
                     </div>
                 </section>
                 <section id="formacion" class="hide">
@@ -76,8 +77,8 @@
                             <label for="">Fin:</label>
                         </div>
                         <div class="registro-2 centrar">
-                            <input type="date" name="" id="">
-                            <input type="date" name="" id="">
+                            <input type="date" name="fecha_inicio" id="">
+                            <input type="date" name="fecha_final" id="">
                         </div>
                         <div class="derecha">
                             <a id="agregarFormacion" class="btn">Agregar <i class="fas fa-plus"></i></a>
@@ -176,7 +177,7 @@
                     <h4 class="izquierda">Objetivos e intereses</h4>
                     <div class="izquierda">
                         <label for="">¿Qué estas buscando?</label>
-                        <textarea name="" id="" cols="30" rows="10"></textarea>
+                        <textarea name="interes" id="" cols="30" rows="10"></textarea>
                         <h4>¿Donde te gustaría trabajar?</h4>
                         <p>Selecciona las opciones que te gustarian</p>
                         <div>
@@ -192,12 +193,13 @@
                             <input style="display: inline-block; width: 50%;" type="checkbox" name="" id="">
                         </div>
                         <label for="">¿Qué giros o sectores te llaman la atención?</label>
-                        <textarea name="" id="" cols="30" rows="10"></textarea>
+                        <textarea name="sectores" id="" cols="30" rows="10"></textarea>
                     </div>
                 </section>
                 <div class="centrar-texto ">
                     <a class="btn-2 " id="regresar">Volver a pagina principal</a>
-                    <a class="btn btn-azul c-blanco " id="continuarRegistro">Continuar</a>
+                    <a class="btn btn-azul c-blanco " name = "save_task_alumno" id="continuarRegistro">Continuar</a>
+                    <input type="submit" name="save_task_alumno" class="btn btn-azul c-blanco " value="Guardar">
                     <!-- <button type="submit " class="btn btn-azul c-blanco ">Continuar</button> -->
                 </div>
             </form>

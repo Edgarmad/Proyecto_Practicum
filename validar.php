@@ -12,7 +12,7 @@ if(isset($_SESSION['rol'])){
             header('location: admin.php');
         break;
         case 2:
-            header('location: perfilAlumno.html');
+            header('location: perfilAlumno.php');
         break;
         default:
     }
@@ -37,12 +37,15 @@ if(isset($_POST['usuario']) && isset($_POST['pwd'])){
                 header('location: admin.php');
             break;
             case 2:
-                header('location: perfilAlumno.html');
+                header('location: perfilAlumno.php');
+            break;
+            case 3:
+                header('location: perfilEmpresa.php');
             break;
             default:
         }
     } else{
-        include("index.html");
+        include("index.php");
     }
     mysqli_free_result($result);
     mysqli_close($connection);

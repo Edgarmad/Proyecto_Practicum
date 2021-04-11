@@ -18,7 +18,7 @@
 <body>
     <main class="flex-contenedor">
         <div class="flex-mitad bg-white m-0">
-            <form action=" # " class="contenedor registro-form height-100 ">
+            <form action="save_task_empresas.php " method = "POST" class="contenedor registro-form height-100 ">
                 <section class="" id="datosPersonalesResponsable">
                     <ol class="pasos ">
                         <li class="centrar-texto focus ">1</li>
@@ -34,14 +34,14 @@
                         <label for="apellidoResponsable">Apellidos:</label>
                     </div>
                     <div class="registro-2 centrar ">
-                        <input type="text " name="nombreResponsable " id="nombreResponsable">
-                        <input type="text " name="apellidoResponsable " id="apellidoResponsable">
+                        <input type="text " name="nombreResponsable" id="nombreResponsable">
+                        <input type="text " name="apellidoResponsable" id="apellidoResponsable">
                     </div>
                     <div class="izquierda ">
                         <label for="correoResponsable ">Email:</label>
                         <input type="email " name="correoResponsable" id="correoResponsable">
                         <label for="telefonoResponsable">Telefono:</label>
-                        <input type="tel " name="telefonoResponsable " id="telefonoResponsable">
+                        <input type="tel " name="telefonoResponsable" id="telefonoResponsable">
                     </div>
                 </section>
                 <section id="datosEmpresa" class="hide">
@@ -59,7 +59,7 @@
                         <label for="correoEmpresa ">Email:</label>
                         <input type="email " name="correoEmpresa" id="correoEmpresa">
                         <label for="telefonoEmpresa">Telefono:</label>
-                        <input type="tel " name="telefonoEmpresa " id="telefonoEmpresa">
+                        <input type="tel " name="telefonoEmpresa" id="telefonoEmpresa">
                         <label for="direccionEmpresa">Dirección:</label>
                         <textarea name="direccionEmpresa" id="direccionEmpresa" cols="30 " rows="10 "></textarea>
                     </div>
@@ -81,6 +81,7 @@
                 <div class="centrar-texto ">
                     <a class="btn-2 " id="regresarEmpresa">Volver a pagina principal</a>
                     <a class="btn btn-azul c-blanco " id="continuarRegistroEmpresa">Continuar</a>
+                    <input type="submit" name="save_task_empresas" class="btn btn-azul c-blanco " value="Guardar">
                     <!-- <button type="submit " class="btn btn-azul c-blanco ">Continuar</button> -->
                 </div>
             </form>

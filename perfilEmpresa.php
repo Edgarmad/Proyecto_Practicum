@@ -1,3 +1,15 @@
+<?php include("db.php")?>
+
+<?php
+session_start();
+if(!isset($_SESSION['rol'])){
+    header('location: index.html');
+} else{
+    if($_SESSION['rol'] != 3){
+        header('location: index.php');
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,12 +55,12 @@
                         <p>Microsoft</p>
                     </div>
                     <div id="editarPerfil">
-                        <a href="resultadoEmpresa.html" style="cursor: pointer;" onclick="desdePer()"><img src="imgBackups/photo-1491975474562-1f4e30bc9468.jfif" alt=""></a>
+                        <a href="resultadoEmpresa.php" style="cursor: pointer;" onclick="desdePer()"><img src="imgBackups/photo-1491975474562-1f4e30bc9468.jfif" alt=""></a>
                     </div>
                 </div>
                 <div class="notificaciones">
                     <a href=""><i class="far fa-bell"></i></a>
-                    <a href="index.html"><i class="fas fa-sign-out-alt"></i></a>
+                    <a href="salir.php"><i class="fas fa-sign-out-alt"></i></a>
                 </div>
             </div>
             <div class="practicas">
@@ -59,7 +71,7 @@
                             <p>Actualmente ofreces las siguientes vacantes: </p>
                         </div>
                         <div class="inline-40 derecha">
-                            <a href="agregarVacante.html" class="btn">Agregar <i class="fas fa-plus"></i></a>
+                            <a href="agregarVacante.php" class="btn">Agregar <i class="fas fa-plus"></i></a>
                         </div>
                     </div>
                     <div class="practicas-contenedor centrar-flex">
@@ -128,7 +140,7 @@
                             <p>Actualmente ofreces las siguientes vacantes: </p>
                         </div>
                         <div class="inline-40 derecha">
-                            <a href="agregarVacante.html" class="btn">Agregar <i class="fas fa-plus"></i></a>
+                            <a href="agregarVacante.php" class="btn">Agregar <i class="fas fa-plus"></i></a>
                         </div>
                     </div>
                     <div class="practicas-contenedor centrar-flex">
@@ -198,7 +210,7 @@
                             <p>Ellos se encuentran contigo actualmente: </p>
                         </div>
                         <div class="inline-40 derecha">
-                            <a href="agregarVacante.html" class="btn">Agregar <i class="fas fa-plus"></i></a>
+                            <a href="agregarVacante.php" class="btn">Agregar <i class="fas fa-plus"></i></a>
                         </div>
                     </div>
                     <div class="practicas-contenedor centrar-flex">

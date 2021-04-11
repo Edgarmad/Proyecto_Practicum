@@ -17,9 +17,9 @@
 
 <body>
     <div class="c-azul header">
-        <a href="registroEmpresa.html" class=""><i class="fas fa-arrow-left"></i></a>
+        <a href="registroEmpresa.php" class=""><i class="fas fa-arrow-left"></i></a>
         <h2 class="centrar-texto">Editar Perfil</h2>
-        <a href="perfilEmpresa.html" class="btn btn-2 p-2">Confirmar</a>
+        <a href="perfilEmpresa.php" class="btn btn-2 p-2">Confirmar</a>
     </div>
     <main class="contenedor">
         <div class="carta-xl">

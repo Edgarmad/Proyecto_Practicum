@@ -6,10 +6,9 @@ if(!isset($_SESSION['rol'])){
     header('location: index.html');
 } else{
     if($_SESSION['rol'] != 1){
-        header('location: index.html');
+        header('location: index.php');
     }
 }
-//agregar lo del cierre de sesion
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -60,7 +59,7 @@ if(!isset($_SESSION['rol'])){
                 </div>
                 <div class="notificaciones">
                     <a href=""><i class="far fa-bell"></i></a>
-                    <a href="index.html"><i class="fas fa-sign-out-alt"></i></a>
+                    <a href="salir.php"><i class="fas fa-sign-out-alt"></i></a>
                 </div>
             </div>
             <div class="practicas">
@@ -68,8 +67,8 @@ if(!isset($_SESSION['rol'])){
     <!--Menu agregar -->
                 <section id="misPracticas">
                     <div class="contenedor">
-                       <div class= "card card-body"> 
-                            <form action = "save_task.php" method = "POST">
+                       <div class= "izquierda"> 
+                            <form action = "save_task.php" method = "POST" class="contenedor registro-form height-100 ">
                                 <div class= "form-group">
                                     <input type="text" name="nombre_usuario" class="form-control" placeholder="Nombre">
                                 </div>
@@ -97,7 +96,7 @@ if(!isset($_SESSION['rol'])){
                 <section id="vacantes" class="hide">
                 <div class="contenedor">
                        <div class= "card card-body"> 
-                            <form action = "delete_task.php" method = "GET">
+                            <form action = "delete_task.php" method = "GET" class="contenedor registro-form height-100 ">
                                 <div class= "form-group">
                                     <input type="text" name="id_usuario" class="form-control" placeholder="Ingrese el ID">
                                 </div>
@@ -110,7 +109,7 @@ if(!isset($_SESSION['rol'])){
                 <section id="postulaciones" class="hide">
                 <div class="contenedor">
                        <div class= "card card-body"> 
-                            <form action = "edit_task.php" method = "GET">
+                            <form action = "edit_task.php" method = "GET" class="contenedor registro-form height-100 ">
                                 <div class= "form-group">
                                     <input type="text" name="id_usuario" class="form-control" placeholder="Ingrese el ID">
                                 </div>

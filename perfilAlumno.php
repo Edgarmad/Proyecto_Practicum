@@ -1,3 +1,15 @@
+<?php include("db.php")?>
+
+<?php
+session_start();
+if(!isset($_SESSION['rol'])){
+    header('location: index.html');
+} else{
+    if($_SESSION['rol'] != 2){
+        header('location: index.php');
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,12 +55,12 @@
                         <p>Estudiante</p>
                     </div>
                     <div>
-                        <a href="resultado.html"><img src="imgBackups/photo-1491975474562-1f4e30bc9468.jfif" alt=""></a>
+                        <a href="resultado.php"><img src="imgBackups/photo-1491975474562-1f4e30bc9468.jfif" alt=""></a>
                     </div>
                 </div>
                 <div class="notificaciones">
                     <a href=""><i class="far fa-bell"></i></a>
-                    <a href="index.html"><i class="fas fa-sign-out-alt"></i></a>
+                    <a href="salir.php"><i class="fas fa-sign-out-alt"></i></a>
                 </div>
             </div>
             <div class="practicas">
@@ -72,7 +84,7 @@
                             </div>
                             <div>
                                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui enim expedita neque sed sint dolores in eveniet suscipit amet saepe? Corporis, voluptatum dolor error quidem magni eos quasi illum eligendi!</p>
-                                <a href="detalles.html" class="btn">Detalles</a>
+                                <a href="detalles.php" class="btn">Detalles</a>
                             </div>
                         </div>
                         <div class="carta-m">
@@ -114,7 +126,7 @@
                             </div>
                             <div>
                                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui enim expedita neque sed sint dolores in eveniet suscipit amet saepe? Corporis, voluptatum dolor error quidem magni eos quasi illum eligendi!</p>
-                                <a href="detalles.html" class="btn">Detalles</a>
+                                <a href="detalles.php" class="btn">Detalles</a>
                             </div>
                         </div>
                         <div class="carta-m">
@@ -148,7 +160,7 @@
                             </div>
                             <div>
                                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui enim expedita neque sed sint dolores in eveniet suscipit amet saepe? Corporis, voluptatum dolor error quidem magni eos quasi illum eligendi!</p>
-                                <a href="detalles.html" class="btn">Detalles</a>
+                                <a href="detalles.php" class="btn">Detalles</a>
                             </div>
                         </div>
                         <div class="carta-m">
@@ -195,7 +207,7 @@
                             </div>
                             <div>
                                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui enim expedita neque sed sint dolores in eveniet suscipit amet saepe? Corporis, voluptatum dolor error quidem magni eos quasi illum eligendi!</p>
-                                <a href="detalles.html" class="btn">Detalles</a>
+                                <a href="detalles.php" class="btn">Detalles</a>
                             </div>
                         </div>
                         <div class="carta-m">
@@ -239,7 +251,7 @@
                             </div>
                             <div>
                                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui enim expedita neque sed sint dolores in eveniet suscipit amet saepe? Corporis, voluptatum dolor error quidem magni eos quasi illum eligendi!</p>
-                                <a href="detalles.html" class="btn">Detalles</a>
+                                <a href="detalles.php" class="btn">Detalles</a>
                             </div>
                         </div>
                     </div>
