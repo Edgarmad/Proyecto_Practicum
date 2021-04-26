@@ -110,7 +110,7 @@ if (isset($_POST['update'])) {
                   <div class="form-group">
                       <input type="text" name="id_mayab" class="form-control" value="<?php echo $anahuac;?>" placeholder = "ID">
                   </div>
-                  <a href="admin.php" class="btn-2">
+                  <a href="perfilEmpresa.php" class="btn-2">
                     volver
                   </a>
                   <button class="btn" name="update">

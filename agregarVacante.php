@@ -43,7 +43,7 @@
                         <p>Microsoft</p>
                     </div>
                     <div id="editarPerfil">
-                        <a href="resultadoEmpresa.html" style="cursor: pointer;" onclick="desdePer()"><img src="imgBackups/photo-1491975474562-1f4e30bc9468.jfif" alt=""></a>
+                        <a href="resultadoColaborador.html" style="cursor: pointer;" onclick="desdePer()"><img src="imgBackups/photo-1491975474562-1f4e30bc9468.jfif" alt=""></a>
                     </div>
                 </div>
                 <div class="notificaciones">

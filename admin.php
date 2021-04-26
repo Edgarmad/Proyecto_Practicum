@@ -5,7 +5,7 @@ session_start();
 if(!isset($_SESSION['rol'])){
     header('location: index.html');
 } else{
-    if($_SESSION['rol'] != 1){
+    if($_SESSION['rol'] != 3){
         header('location: index.php');
     }
 }
@@ -28,7 +28,7 @@ if(!isset($_SESSION['rol'])){
 <?php
 
 //Obtener el nombre
-$query_nombre = 'SELECT nombre FROM datos_personales WHERE id = 4';
+$query_nombre = 'SELECT nombre FROM datos_personales WHERE id = 14';
 $resultado_nombre = mysqli_query($connection, $query_nombre);
 if(!$resultado_nombre) {
     die("Query Failed.");
@@ -36,7 +36,7 @@ if(!$resultado_nombre) {
 $row = mysqli_fetch_array($resultado_nombre);
 $nombre = $row['nombre'];
 //obtener el rol
-$query_rol = 'SELECT rol FROM roles WHERE id = 1';
+$query_rol = 'SELECT rol FROM roles WHERE id = 3';
 $resultado_rol = mysqli_query($connection, $query_rol);
 if(!$resultado_rol) {
     die("Query Failed.");
@@ -106,6 +106,9 @@ $rol = $row['rol'];
                                 </div>
                                 <div class="form-group">
                                     <input type="text" name="lugar_nacimiento_usuario" class="form-control" placeholder="Lugar de nacimiento">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="id_usuario" class="form-control" placeholder="ID">
                                 </div>
                                 <input type="submit" name="save_task" class="btn btn-success btn-block" value="Guardar">
                             </form>

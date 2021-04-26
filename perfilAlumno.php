@@ -28,7 +28,7 @@ if(!isset($_SESSION['rol'])){
 <?php
 
 //Obtener el nombre
-$query_nombre = 'SELECT nombre FROM datos_personales WHERE id = 3';
+$query_nombre = 'SELECT nombre FROM datos_personales WHERE id = 6';
 $resultado_nombre = mysqli_query($connection, $query_nombre);
 if(!$resultado_nombre) {
     die("Query Failed.");
@@ -65,6 +65,10 @@ $rol = $row['rol'];
                 <i class="fas fa-briefcase"></i>
                 <a href="#">Postulaciones</a>
             </div>
+            <div class="accion" id="busquedaBtn">
+                <i class="fas fa-briefcase"></i>
+                <a href="#">Busqueda</a>
+            </div>
         </div>
         <div class="perfil-contenido">
             <div class="datos-perfil">
@@ -82,6 +86,7 @@ $rol = $row['rol'];
                     <a href="salir.php"><i class="fas fa-sign-out-alt"></i></a>
                 </div>
             </div>
+            <!-- Seccion de practicas-->
             <div class="practicas">
                 <section id="misPracticas">
                     <div class="contenedor izquierda">
@@ -125,6 +130,7 @@ $rol = $row['rol'];
                         </div>
                     </div>
                 </section>
+                 <!-- Seccion de vacantes-->
                 <section id="vacantes" class="hide">
                     <div class="contenedor izquierda">
                         <h2>Vacantes</h2>
@@ -201,6 +207,7 @@ $rol = $row['rol'];
                         </div>
                     </div>
                 </section>
+                 <!-- Seccion de postulaciones-->
                 <section id="postulaciones" class="hide">
                     <div class="contenedor izquierda">
                         <h2>Mis Postulaciones</h2>
@@ -274,6 +281,17 @@ $rol = $row['rol'];
                             </div>
                         </div>
                     </div>
+                </section>
+                 <!-- Seccion de busqueda de vacantes-->
+                <section id="busqueda" class="hide">
+                <h2>Busqueda de vacantes</h2>
+                        <div class="formulario">
+                            <label for="caja_busqueda">Buscar</label>
+                            <input type="text" name="caja_busqueda" id="caja_busqueda"></input>
+                        </div>
+                        <div id="datos"></div>
+                        <script type="text/javascript" src="js/jquery.min.js"></script>
+                        <script type="text/javascript" src="js/main.js"></script>
                 </section>
             </div>
         </div>

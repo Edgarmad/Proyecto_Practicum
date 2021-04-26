@@ -41,6 +41,8 @@
                         <input type="text" name="apellido" id="apellido">
                     </div>
                     <div class="izquierda ">
+                        <label for="id_mayab">ID:</label>
+                        <input type="text" name="id_mayab" id="id_mayab">
                         <label for="correo ">Email:</label>
                         <input type="text" name="correo" id="correo">
                         <label for="telefon">Telefono:</label>

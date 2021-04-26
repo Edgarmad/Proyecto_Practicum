@@ -1,6 +1,7 @@
 <?php
 include('db.php');
 //nuevo codigo
+session_destroy();
 session_start();
 if(isset($_GET['cerrar_sesion'])){
     session_unset();
@@ -14,6 +15,12 @@ if(isset($_SESSION['rol'])){
         case 2:
             header('location: perfilAlumno.php');
         break;
+        case 3:
+            header('location: perfilEmpresa.php');
+        break;
+        case 4:
+            header('location: perfilColaborador.php');
+        break;
         default:
     }
 }
@@ -22,12 +29,11 @@ if(isset($_POST['usuario']) && isset($_POST['pwd'])){
     $usuario = $_POST['usuario'];
     $password = $_POST['pwd'];
     $_SESSION['usuario'] = $usuario;
-    $query = "SELECT*FROM alumno WHERE id_datos_personales = '$usuario' and password = '$password'";
+    $query = "SELECT*FROM alumno WHERE id_interno = '$usuario' and password = '$password'";
     $result = mysqli_query($connection, $query);
     if(!$result) {
         die("Query Failed.");
       }
-    //$row =  $query->fetch(PDO::FETCH_BOTH);
     $row =  mysqli_fetch_array($result);
     if($row == TRUE){
         $rol = $row[5];
@@ -41,6 +47,9 @@ if(isset($_POST['usuario']) && isset($_POST['pwd'])){
             break;
             case 3:
                 header('location: perfilEmpresa.php');
+            break;
+            case 4:
+                header('location: perfilColaborador.php');
             break;
             default:
         }

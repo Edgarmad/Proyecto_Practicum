@@ -425,21 +425,32 @@ const misPracticasBtn = document.querySelector('#misPracticasBtn');
 const misPracticas = document.querySelector('#misPracticas');
 const postulacionesBtn = document.querySelector('#postulacionesBtn');
 const postulaciones = document.querySelector('#postulaciones');
+const busquedaBtn = document.querySelector('#busquedaBtn');
+const busqueda = document.querySelector('#busqueda');
 
 if (vacantes && misPracticas) {
     vacantesBtn.addEventListener('click', () => {
         vacantes.classList.remove('hide');
         misPracticas.classList.add('hide');
         postulaciones.classList.add('hide');
+        busqueda.classList.add('hide');
     });
     misPracticasBtn.addEventListener('click', () => {
         vacantes.classList.add('hide');
         misPracticas.classList.remove('hide');
         postulaciones.classList.add('hide');
+        busqueda.classList.add('hide');
     });
     postulacionesBtn.addEventListener('click', () => {
         vacantes.classList.add('hide');
         misPracticas.classList.add('hide');
         postulaciones.classList.remove('hide');
+        busqueda.classList.add('hide');
+    });
+    busquedaBtn.addEventListener('click', () => {
+        vacantes.classList.add('hide');
+        misPracticas.classList.add('hide');
+        postulaciones.classList.add('hide');
+        busqueda.classList.remove('hide');
     });
 }

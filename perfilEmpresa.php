@@ -12,11 +12,11 @@ if(!isset($_SESSION['rol'])){
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PXS</title>
+    <title>ADMIN</title>
+    <!-- ICONO DE PESTAÑA -->
     <link rel="shortcut icon" href="https://www.miplana.mx/r_/inc/img/favicon.ico">
     <!--NORMALIZE-->
     <link rel="stylesheet" href="css/normalize.css">
@@ -28,7 +28,7 @@ if(!isset($_SESSION['rol'])){
 <?php
 
 //Obtener el nombre
-$query_nombre = 'SELECT nombre FROM datos_personales WHERE id = 58';
+$query_nombre = 'SELECT nombre FROM datos_personales WHERE id = 14';
 $resultado_nombre = mysqli_query($connection, $query_nombre);
 if(!$resultado_nombre) {
     die("Query Failed.");
@@ -53,17 +53,18 @@ $rol = $row['rol'];
             <div class="accion" id="burger-menu">
                 <a href="#"><i class="fas fa-bars" ></i></a>
             </div>
+            <div class="accion" id="misPracticasBtn">
+                <i class="far fa-user"></i>
+                <a href="#">Agregar responsables</a>
+            </div>
             <div class="accion" id="vacantesBtn">
                 <i class="fas fa-file-alt"></i>
-                <a>Vacantes</a>
+                <a>Quitar responsables</a>
             </div>
-            <div class="accion" id="postuladosBtn">
-                <i class="fas fa-user-plus"></i>
-                <a>Postulados</a>
+            <div class="accion" id="postulacionesBtn">
+                <i class="fas fa-briefcase"></i>
+                <a href="#">Editar responsables</a>
             </div>
-            <div class="accion" id="practicantesBtn">
-                <i class="fas fa-users"></i>
-                <a>Practicantes</a>
             </div>
         </div>
         <div class="perfil-contenido">
@@ -73,8 +74,8 @@ $rol = $row['rol'];
                         <h4><?php echo $nombre;?></h4>
                         <p><?php echo $rol;?></p>
                     </div>
-                    <div id="editarPerfil">
-                        <a href="resultadoEmpresa.php" style="cursor: pointer;" onclick="desdePer()"><img src="imgBackups/photo-1491975474562-1f4e30bc9468.jfif" alt=""></a>
+                    <div>
+                        <a href=""><img src="imgBackups/photo-1491975474562-1f4e30bc9468.jfif" alt=""></a>
                     </div>
                 </div>
                 <div class="notificaciones">
@@ -83,219 +84,67 @@ $rol = $row['rol'];
                 </div>
             </div>
             <div class="practicas">
-                <section id="vacantes">
-                    <div class="contenedor izquierda">
-                        <div class="inline-40">
-                            <h2>Mis Vacantes</h2>
-                            <p>Actualmente ofreces las siguientes vacantes: </p>
-                        </div>
-                        <div class="inline-40 derecha">
-                            <a href="agregarVacante.php" class="btn">Agregar <i class="fas fa-plus"></i></a>
-                        </div>
-                    </div>
-                    <div class="practicas-contenedor centrar-flex">
-                        <div class="carta-ch">
-                            <div class="cir-gris centrar">
-                                <i class="far fa-user centrar"></i>
-                            </div>
-                            <h2 class="centrar-texto m-1 f-16">Analista contador</h2>
-                            <div class="m-2" style="color: lightgray; font-size: 1.2rem;">
-                                <div class="centrar-texto">
-                                    <p><i class="fas fa-users m-r-2"></i><i class="fas fa-file-alt m-r-2"></i></p>
-                                    <p> 4 Vacantes</p>
-                                    <p> 8 Postulaciones</p>
+<!--Menu lateral izquierdo -->
+    <!--Menu agregar -->
+                <section id="misPracticas">
+                    <div class="contenedor">
+                       <div class= "izquierda"> 
+                            <form action = "save_task_colaborador.php" method = "POST" class="contenedor registro-form height-100 ">
+                                <div class= "form-group">
+                                    <input type="text" name="nombre_usuario" class="form-control" placeholder="Nombre">
                                 </div>
-                            </div>
-                            <button class="btn">Editar</button>
-                        </div>
-                        <div class="carta-ch">
-                            <div class="cir-gris centrar">
-                                <i class="far fa-user centrar"></i>
-                            </div>
-                            <h2 class="centrar-texto m-1 f-16">Analista aduanero</h2>
-                            <div class="m-2" style="color: lightgray; font-size: 1.2rem;">
-                                <div class="centrar-texto">
-                                    <p><i class="fas fa-users m-r-2"></i><i class="fas fa-file-alt m-r-2"></i></p>
-                                    <p> 4 Vacantes</p>
-                                    <p> 8 Postulaciones</p>
+                                <div class="form-group">
+                                    <input type="text" name="apellido_usuario" class="form-control" placeholder="Apellido">
                                 </div>
-                            </div>
-                            <button class="btn">Editar</button>
-                        </div>
-                        <div class="carta-ch">
-                            <div class="cir-gris centrar">
-                                <i class="far fa-user centrar"></i>
-                            </div>
-                            <h2 class="centrar-texto m-1 f-16">Desarrollador web</h2>
-                            <div class="m-2" style="color: lightgray; font-size: 1.2rem;">
-                                <div class="centrar-texto">
-                                    <p><i class="fas fa-users m-r-2"></i><i class="fas fa-file-alt m-r-2"></i></p>
-                                    <p> 4 Vacantes</p>
-                                    <p> 8 Postulaciones</p>
+                                <div class= "form-group">
+                                    <input type="text" name="correo_usuario" class="form-control" placeholder="Correo">
                                 </div>
-                            </div>
-                            <button class="btn">Editar</button>
-                        </div>
-                        <div class="carta-ch">
-                            <div class="cir-gris centrar">
-                                <i class="far fa-user centrar"></i>
-                            </div>
-                            <h2 class="centrar-texto m-1 f-16">Interno cocina</h2>
-                            <div class="m-2" style="color: lightgray; font-size: 1.2rem;">
-                                <div class="centrar-texto">
-                                    <p><i class="fas fa-users m-r-2"></i><i class="fas fa-file-alt m-r-2"></i></p>
-                                    <p> 4 Vacantes</p>
-                                    <p> 8 Postulaciones</p>
+                                <div class="form-group">
+                                    <input type="text" name="telefono_usuario" class="form-control" placeholder="Telefono">
                                 </div>
-                            </div>
-                            <button class="btn">Editar</button>
-                        </div>
+                                <div class= "form-group">
+                                    <input type="text" name="direccion_usuario" class="form-control" placeholder="Direccion">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="lugar_nacimiento_usuario" class="form-control" placeholder="Lugar de nacimiento">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="id_usuario" class="form-control" placeholder="ID">
+                                </div>
+                                <input type="submit" name="save_task_colaborador" class="btn btn-success btn-block" value="Guardar">
+                            </form>
+                       </div>
                     </div>
                 </section>
-                <section id="postulados" class="hide">
-                    <div class="contenedor izquierda">
-                        <div class="inline-40">
-                            <h2>Alumnos postulados</h2>
-                            <p>Actualmente ofreces las siguientes vacantes: </p>
-                        </div>
-                        <div class="inline-40 derecha">
-                            <a href="agregarVacante.php" class="btn">Agregar <i class="fas fa-plus"></i></a>
-                        </div>
-                    </div>
-                    <div class="practicas-contenedor centrar-flex">
-                        <div class="carta-ch">
-                            <div class="centrar-texto">
-                                <img src="imgBackups/photo-1539302730708-a9ccbdd8332b.jfif" alt="">
-                            </div>
-                            <h2 class="centrar-texto m-1 f-16">Monica López</h2>
-                            <h3 class="centrar-texto">Negocios Internacionales</h3>
-                            <div class="m-2" style="color: lightgray; font-size: 1.2rem;">
-                                <div class="centrar-texto">
-                                    <p><i class="fas fa-file-alt m-r-2"></i><i class="fas fa-phone m-r-2"></i><i class="fas fa-envelope m-r-2"></i></p>
-                                    <p>Analista contador</p>
-                                    <p>9994587687</p>
-                                    <p>maquinadefuego@gmail.com</p>
+    <!--Menu borrar -->
+                <section id="vacantes" class="hide">
+                <div class="contenedor">
+                       <div class= "card card-body"> 
+                            <form action = "delete_task_colaborador.php" method = "GET" class="contenedor registro-form height-100 ">
+                                <div class= "form-group">
+                                    <input type="text" name="id_usuario" class="form-control" placeholder="Ingrese el ID">
                                 </div>
-                            </div>
-                            <div class="centrar-texto">
-                                <button class="btn">Rechazar</button>
-                                <button class="btn">Aceptar</button>
-                            </div>         
-                        </div>
-                        <div class="carta-ch">
-                            <div class="centrar-texto">
-                                <img src="imgBackups/photo-1539302730708-a9ccbdd8332b.jfif" alt="">
-                            </div>
-                            <h2 class="centrar-texto m-1 f-16">Monica López</h2>
-                            <h3 class="centrar-texto">Negocios Internacionales</h3>
-                            <div class="m-2" style="color: lightgray; font-size: 1.2rem;">
-                                <div class="centrar-texto">
-                                    <p><i class="fas fa-file-alt m-r-2"></i><i class="fas fa-phone m-r-2"></i><i class="fas fa-envelope m-r-2"></i></p>
-                                    <p>Analista contador</p>
-                                    <p>9994587687</p>
-                                    <p>maquinadefuego@gmail.com</p>
-                                </div>
-                            </div>
-                            <div class="centrar-texto">
-                                <button class="btn">Rechazar</button>
-                                <button class="btn">Aceptar</button>
-                            </div>         
-                        </div>
-                        <div class="carta-ch">
-                            <div class="centrar-texto">
-                                <img src="imgBackups/photo-1539302730708-a9ccbdd8332b.jfif" alt="">
-                            </div>
-                            <h2 class="centrar-texto m-1 f-16">Monica López</h2>
-                            <h3 class="centrar-texto">Negocios Internacionales</h3>
-                            <div class="m-2" style="color: lightgray; font-size: 1.2rem;">
-                                <div class="centrar-texto">
-                                    <p><i class="fas fa-file-alt m-r-2"></i><i class="fas fa-phone m-r-2"></i><i class="fas fa-envelope m-r-2"></i></p>
-                                    <p>Analista contador</p>
-                                    <p>9994587687</p>
-                                    <p>maquinadefuego@gmail.com</p>
-                                </div>
-                            </div>
-                            <div class="centrar-texto">
-                                <button class="btn">Rechazar</button>
-                                <button class="btn">Aceptar</button>
-                            </div>         
-                        </div>
+                                <input type="submit" name="delete_task_colaborador" class="btn btn-success btn-block" value="Borrar">
+                            </form>
+                       </div>
                     </div>
                 </section>
-                <section id="practicantes" class="hide">
-                    <div class="contenedor izquierda">
-                        <div class="inline-40">
-                            <h2>Mis practicantes</h2>
-                            <p>Ellos se encuentran contigo actualmente: </p>
-                        </div>
-                        <div class="inline-40 derecha">
-                            <a href="agregarVacante.php" class="btn">Agregar <i class="fas fa-plus"></i></a>
-                        </div>
-                    </div>
-                    <div class="practicas-contenedor centrar-flex">
-                        <div class="carta-ch">
-                            <div class="centrar-texto">
-                                <img src="imgBackups/photo-1539302730708-a9ccbdd8332b.jfif" alt="">
-                            </div>
-                            <h2 class="centrar-texto m-1 f-16">Monica López</h2>
-                            <h3 class="centrar-texto">Negocios Internacionales</h3>
-                            <div class="m-2" style="color: lightgray; font-size: 1.2rem;">
-                                <div class="centrar-texto">
-                                    <p><i class="fas fa-file-alt m-r-2"></i><i class="fas fa-phone m-r-2"></i><i class="fas fa-envelope m-r-2"></i></p>
-                                    <p>Analista contador</p>
-                                    <p>9994587687</p>
-                                    <p>maquinadefuego@gmail.com</p>
+    <!--Menu editar -->
+                <section id="postulaciones" class="hide">
+                <div class="contenedor">
+                       <div class= "card card-body"> 
+                            <form action = "edit_task_colaborador.php" method = "GET" class="contenedor registro-form height-100 ">
+                                <div class= "form-group">
+                                    <input type="text" name="id_usuario" class="form-control" placeholder="Ingrese el ID">
                                 </div>
-                            </div>
-                            <div class="centrar-texto">
-                                <label style="display: block;" for="progreso1">Progreso</label>
-                                <input type="range" name="progreso1" id="progreso1" min="0" max="100" value="25" disabled>
-                            </div>         
-                        </div>
-                        <div class="carta-ch">
-                            <div class="centrar-texto">
-                                <img src="imgBackups/photo-1539302730708-a9ccbdd8332b.jfif" alt="">
-                            </div>
-                            <h2 class="centrar-texto m-1 f-16">Monica López</h2>
-                            <h3 class="centrar-texto">Negocios Internacionales</h3>
-                            <div class="m-2" style="color: lightgray; font-size: 1.2rem;">
-                                <div class="centrar-texto">
-                                    <p><i class="fas fa-file-alt m-r-2"></i><i class="fas fa-phone m-r-2"></i><i class="fas fa-envelope m-r-2"></i></p>
-                                    <p>Analista contador</p>
-                                    <p>9994587687</p>
-                                    <p>maquinadefuego@gmail.com</p>
-                                </div>
-                            </div>
-                            <div class="centrar-texto">
-                                <label style="display: block;" for="progreso1">Progreso</label>
-                                <input type="range" name="progreso1" id="progreso1" min="0" max="100" value="95" disabled>
-                            </div>         
-                        </div>
-                        <div class="carta-ch">
-                            <div class="centrar-texto">
-                                <img src="imgBackups/photo-1539302730708-a9ccbdd8332b.jfif" alt="">
-                            </div>
-                            <h2 class="centrar-texto m-1 f-16">Monica López</h2>
-                            <h3 class="centrar-texto">Negocios Internacionales</h3>
-                            <div class="m-2" style="color: lightgray; font-size: 1.2rem;">
-                                <div class="centrar-texto">
-                                    <p><i class="fas fa-file-alt m-r-2"></i><i class="fas fa-phone m-r-2"></i><i class="fas fa-envelope m-r-2"></i></p>
-                                    <p>Analista contador</p>
-                                    <p>9994587687</p>
-                                    <p>maquinadefuego@gmail.com</p>
-                                </div>
-                            </div>
-                            <div class="centrar-texto">
-                                <label style="display: block;" for="progreso1">Progreso</label>
-                                <input type="range" name="progreso1" id="progreso1" min="0" max="100" value="52" disabled>
-                            </div>         
-                        </div>
+                                <input type="submit" name="edit_task_colaborador" class="btn btn-success btn-block" value="Editar">
+                            </form>
+                       </div>
                     </div>
                 </section>
             </div>
         </div>
     </main>
-    <script src="js/script2.js"></script>
+    <script src="js/script.js"></script>
 </body>
-
 </html>
