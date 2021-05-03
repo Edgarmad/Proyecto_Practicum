@@ -128,12 +128,12 @@
                     <section class="izquierda">
                         <h4>Idiomas</h4>
                         <div class="">
-                            <ul id="idiomas">
-                                <li>Español</li>
-                                <li><span class="competencias c-azul"><i id="uno" class="far fa-star"></i><i id="dos" class="far fa-star"></i><i id="tres" class="far fa-star"></i><i id="cuatro" class="far fa-star"></i><i id="cinco" class="far fa-star"></i></span></li>
-                                <li>Inglés</li>
-                                <li><span class="competencias c-azul"><i id="uno" class="far fa-star"></i><i id="dos" class="far fa-star"></i><i id="tres" class="far fa-star"></i><i id="cuatro" class="far fa-star"></i><i id="cinco" class="far fa-star"></i></span></li>
-                            </ul>
+                            <div id="idiomas">
+                                <label for="español">Español</label>
+                                <input type="range" name="español" id="español" min="1" max="100">
+                                <label for="ingles">Ingles</label>
+                                <input type="range" name="ingles" id="ingles" min="1" max="100">
+                            </div>
                         </div>
                         <div class="derecha">
                             <a id="agregarIdioma" class="btn">Agregar <i class="fas fa-plus"></i></a>
@@ -142,10 +142,10 @@
                     <section class="izquierda">
                         <h4>Tecnología</h4>
                         <div class="">
-                            <ul id="tecnologias">
-                                <li>Paqueteria Office</li>
-                                <li><span class="competencias c-azul"><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></span></li>
-                            </ul>
+                            <div id="tecnologias">
+                                <label for="office">Paqueteria Office</label>
+                                <input type="range" name="office" id="office" min="1" max="100" >
+                            </div>
                         </div>
                         <div class="derecha">
                             <a id="agregarTecnologia" class="btn">Agregar <i class="fas fa-plus"></i></a>
@@ -154,14 +154,14 @@
                     <section class="izquierda">
                         <h4>Otras habilidades</h4>
                         <div id="otrasHabilidades">
-                            <label style="display: inline-block; width: 40%; color: black;" for="">Relaciones públicas</label>
-                            <input style="display: inline-block; width: 50%;" type="checkbox" name="some" id="some">
-                            <label style="display: inline-block; width: 40%; color: black;" for="">Trabajo en equipo</label>
-                            <input style="display: inline-block; width: 50%;" type="checkbox" name="" id="">
-                            <label style="display: inline-block; width: 40%; color: black;" for="">Comunicación asertiva</label>
-                            <input style="display: inline-block; width: 50%;" type="checkbox" name="" id="">
-                            <label style="display: inline-block; width: 40%; color: black;" for="">Administración del tiempo</label>
-                            <input style="display: inline-block; width: 50%;" type="checkbox" name="" id="">
+                            <label style="display: inline-block; width: 40%; color: black;" for="publicas">Relaciones públicas</label>
+                            <input style="display: inline-block; width: 50%;" type="checkbox" name="publicas" id="publicas">
+                            <label style="display: inline-block; width: 40%; color: black;" for="teamwork">Trabajo en equipo</label>
+                            <input style="display: inline-block; width: 50%;" type="checkbox" name="teamwork" id="teamwork">
+                            <label style="display: inline-block; width: 40%; color: black;" for="asertiva">Comunicación asertiva</label>
+                            <input style="display: inline-block; width: 50%;" type="checkbox" name="asertiva" id="asertiva">
+                            <label style="display: inline-block; width: 40%; color: black;" for="tiempo">Administración del tiempo</label>
+                            <input style="display: inline-block; width: 50%;" type="checkbox" name="tiempo" id="tiempo">
                         </div>
                         <div class="derecha">
                             <a id="agregarOtrasHabilidades" class="btn">Agregar <i class="fas fa-plus"></i></a>

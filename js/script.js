@@ -333,6 +333,8 @@ if (formacion && experiencia) {
         remove.remove();
     }
 }
+
+
 if (competencias) {
     //Agregando Idiomas
     let list = ['uno', 'dos', 'tres', 'cuatro', 'cinco'];
@@ -414,9 +416,31 @@ if (competencias) {
 const editarPersonales = document.querySelector('#editarPersonales');
 const editarFormacion = document.querySelector('#editarFormacion');
 const editarCompetencias = document.querySelector('#editarCompetencias');
-const editarExperiencias = document.querySelector('#editarExperiencias');
+const editarExperiencias = document.querySelector('#editarExperiencia');
 const editarObjetivos = document.querySelector('#editarObjetivos');
-const idPersonales = [];
+const idPersonales = ['nombre', 'apellido','correo','telefono','direccion','nacioEn'];
+const idFormacion = ['carrera','institucion','nivelProf','inicioFormacion','finFormacion'];
+const idExperiencias = ['puesto','lugar','act','inicioAct','finAct'];
+const idCompetencias = ['publicas','teamwork','asertiva','tiempo','español','ingles','office'];
+const idObjetivos = ['intereses', 'empPequeña','empMediana','empGrande','startups','dependencias','giros'];
+
+/* EDITAR EN RESULTADOS */
+if (editarPersonales) {
+    function editar(dato, ids) {
+        dato.addEventListener('click', () => {
+            ids.forEach(element => {
+                // console.log(document.getElementById(element));
+                document.getElementById(element).toggleAttribute('disabled');
+                // element.removeAttribute('disabled');
+            });
+        });
+    }
+    editar(editarPersonales, idPersonales);
+    editar(editarFormacion, idFormacion);
+    editar(editarExperiencias, idExperiencias);
+    editar(editarObjetivos,idObjetivos);
+    editar(editarCompetencias, idCompetencias);
+}
 
 /* MOVER ENTRE PAGINAS PERFIL */
 const vacantesBtn = document.querySelector('#vacantesBtn');
@@ -453,4 +477,5 @@ if (vacantes && misPracticas) {
         postulaciones.classList.add('hide');
         busqueda.classList.remove('hide');
     });
+
 }

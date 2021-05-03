@@ -163,63 +163,69 @@ $rol = $row['rol'];
                         </div>
                     </div>
                     <div class="practicas-contenedor centrar-flex">
-                        <div class="carta-ch">
-                            <div class="centrar-texto">
-                                <img src="imgBackups/photo-1539302730708-a9ccbdd8332b.jfif" alt="">
-                            </div>
-                            <h2 class="centrar-texto m-1 f-16">Monica López</h2>
-                            <h3 class="centrar-texto">Negocios Internacionales</h3>
-                            <div class="m-2" style="color: lightgray; font-size: 1.2rem;">
+                        <section id = "seccion1">
+                            <div class="carta-ch">
                                 <div class="centrar-texto">
-                                    <p><i class="fas fa-file-alt m-r-2"></i><i class="fas fa-phone m-r-2"></i><i class="fas fa-envelope m-r-2"></i></p>
-                                    <p>Analista contador</p>
-                                    <p>9994587687</p>
-                                    <p>maquinadefuego@gmail.com</p>
+                                    <img src="imgBackups/photo-1539302730708-a9ccbdd8332b.jfif" alt="">
                                 </div>
-                            </div>
-                            <div class="centrar-texto">
-                                <button class="btn">Rechazar</button>
-                                <button class="btn">Aceptar</button>
-                            </div>         
-                        </div>
-                        <div class="carta-ch">
-                            <div class="centrar-texto">
-                                <img src="imgBackups/photo-1539302730708-a9ccbdd8332b.jfif" alt="">
-                            </div>
-                            <h2 class="centrar-texto m-1 f-16">Monica López</h2>
-                            <h3 class="centrar-texto">Negocios Internacionales</h3>
-                            <div class="m-2" style="color: lightgray; font-size: 1.2rem;">
+                                <h2 class="centrar-texto m-1 f-16">Monica López</h2>
+                                <h3 class="centrar-texto">Negocios Internacionales</h3>
+                                <div class="m-2" style="color: lightgray; font-size: 1.2rem;">
+                                    <div class="centrar-texto">
+                                        <p><i class="fas fa-file-alt m-r-2"></i><i class="fas fa-phone m-r-2"></i><i class="fas fa-envelope m-r-2"></i></p>
+                                        <p>Analista contador</p>
+                                        <p>9994587687</p>
+                                        <p>maquinadefuego@gmail.com</p>
+                                    </div>
+                                </div>
                                 <div class="centrar-texto">
-                                    <p><i class="fas fa-file-alt m-r-2"></i><i class="fas fa-phone m-r-2"></i><i class="fas fa-envelope m-r-2"></i></p>
-                                    <p>Analista contador</p>
-                                    <p>9994587687</p>
-                                    <p>maquinadefuego@gmail.com</p>
-                                </div>
+                                    <button class="btn" id = "rechazar" onclick = "rechazar()">Rechazar</button>
+                                    <button class="btn" id = "aceptar" onclick = "aceptar()">Aceptar</button>
+                                </div>         
                             </div>
-                            <div class="centrar-texto">
-                                <button class="btn">Rechazar</button>
-                                <button class="btn">Aceptar</button>
-                            </div>         
-                        </div>
-                        <div class="carta-ch">
-                            <div class="centrar-texto">
-                                <img src="imgBackups/photo-1539302730708-a9ccbdd8332b.jfif" alt="">
-                            </div>
-                            <h2 class="centrar-texto m-1 f-16">Monica López</h2>
-                            <h3 class="centrar-texto">Negocios Internacionales</h3>
-                            <div class="m-2" style="color: lightgray; font-size: 1.2rem;">
+                        </section>
+                        <section id = "seccion2">
+                            <div class="carta-ch">
                                 <div class="centrar-texto">
-                                    <p><i class="fas fa-file-alt m-r-2"></i><i class="fas fa-phone m-r-2"></i><i class="fas fa-envelope m-r-2"></i></p>
-                                    <p>Analista contador</p>
-                                    <p>9994587687</p>
-                                    <p>maquinadefuego@gmail.com</p>
+                                    <img src="imgBackups/photo-1539302730708-a9ccbdd8332b.jfif" alt="">
                                 </div>
+                                <h2 class="centrar-texto m-1 f-16">Jose Perez</h2>
+                                <h3 class="centrar-texto">Negocios Internacionales</h3>
+                                <div class="m-2" style="color: lightgray; font-size: 1.2rem;">
+                                    <div class="centrar-texto">
+                                        <p><i class="fas fa-file-alt m-r-2"></i><i class="fas fa-phone m-r-2"></i><i class="fas fa-envelope m-r-2"></i></p>
+                                        <p>Analista contador</p>
+                                        <p>9994587687</p>
+                                        <p>maquinadefuego@gmail.com</p>
+                                    </div>
+                                </div>
+                                <div class="centrar-texto">
+                                        <button class="btn" id = "rechazar" onclick = "rechazar()">Rechazar</button>
+                                        <button class="btn" id = "aceptar" onclick = "aceptar()">Aceptar</button>
+                                </div>         
                             </div>
-                            <div class="centrar-texto">
-                                <button class="btn">Rechazar</button>
-                                <button class="btn">Aceptar</button>
-                            </div>         
-                        </div>
+                        </section>
+                        <section id = "seccion2">
+                            <div class="carta-ch">
+                                <div class="centrar-texto">
+                                    <img src="imgBackups/photo-1539302730708-a9ccbdd8332b.jfif" alt="">
+                                </div>
+                                <h2 class="centrar-texto m-1 f-16">Enrrique Guzman</h2>
+                                <h3 class="centrar-texto">Negocios Internacionales</h3>
+                                <div class="m-2" style="color: lightgray; font-size: 1.2rem;">
+                                    <div class="centrar-texto">
+                                        <p><i class="fas fa-file-alt m-r-2"></i><i class="fas fa-phone m-r-2"></i><i class="fas fa-envelope m-r-2"></i></p>
+                                        <p>Analista contador</p>
+                                        <p>9994587687</p>
+                                        <p>maquinadefuego@gmail.com</p>
+                                    </div>
+                                </div>
+                                <div class="centrar-texto">
+                                        <button class="btn" id = "rechazar" onclick = "rechazar()">Rechazar</button>
+                                        <button class="btn" id = "aceptar" onclick = "aceptar()">Aceptar</button>
+                                </div>         
+                            </div>
+                        </section>
                     </div>
                 </section>
                 <section id="practicantes" class="hide">
@@ -237,7 +243,7 @@ $rol = $row['rol'];
                             <div class="centrar-texto">
                                 <img src="imgBackups/photo-1539302730708-a9ccbdd8332b.jfif" alt="">
                             </div>
-                            <h2 class="centrar-texto m-1 f-16">Monica López</h2>
+                            <h2 class="centrar-texto m-1 f-16">Tulio Torres</h2>
                             <h3 class="centrar-texto">Negocios Internacionales</h3>
                             <div class="m-2" style="color: lightgray; font-size: 1.2rem;">
                                 <div class="centrar-texto">
@@ -256,7 +262,7 @@ $rol = $row['rol'];
                             <div class="centrar-texto">
                                 <img src="imgBackups/photo-1539302730708-a9ccbdd8332b.jfif" alt="">
                             </div>
-                            <h2 class="centrar-texto m-1 f-16">Monica López</h2>
+                            <h2 class="centrar-texto m-1 f-16">Kamile Bidan</h2>
                             <h3 class="centrar-texto">Negocios Internacionales</h3>
                             <div class="m-2" style="color: lightgray; font-size: 1.2rem;">
                                 <div class="centrar-texto">
@@ -275,7 +281,7 @@ $rol = $row['rol'];
                             <div class="centrar-texto">
                                 <img src="imgBackups/photo-1539302730708-a9ccbdd8332b.jfif" alt="">
                             </div>
-                            <h2 class="centrar-texto m-1 f-16">Monica López</h2>
+                            <h2 class="centrar-texto m-1 f-16">Deuteronomio Ibáñez</h2>
                             <h3 class="centrar-texto">Negocios Internacionales</h3>
                             <div class="m-2" style="color: lightgray; font-size: 1.2rem;">
                                 <div class="centrar-texto">

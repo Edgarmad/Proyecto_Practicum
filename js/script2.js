@@ -164,6 +164,22 @@ if (vacantes && postulados) {
     });
 }
 
+/* Boton de rechazar*/
+const rechazarbtn = document.getElementById('rechazar');
+const seccion1 = document.getElementById('seccion1');
+function rechazar(){
+    rechazarbtn.addEventListener('click', () =>{
+        seccion1.classList.add('hide');
+    });
+}
+/* Boton de aceptar */
+const aceptarbtn = document.getElementById('aceptar');
+const seccion2 = document.getElementById('seccion2');
+function aceptar(){
+    aceptarbtn.addEventListener('click', () =>{
+        seccion2.classList.add('hide');
+    });
+}
 // editarPersonales.addEventListener('click', () => {
 //     idPersonales.forEach(element => {
 //         document.getElementById(element).toggleAttribute('disabled');

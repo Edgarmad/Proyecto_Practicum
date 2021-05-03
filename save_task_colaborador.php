@@ -13,5 +13,5 @@ if (isset($_POST['save_task_colaborador'])) {
         die("Query Failed.");
       }
   }
-  header('Location: admin.php');
+  header('Location: perfilEmpresa.php');
 ?>
