@@ -24,6 +24,7 @@ if(isset($_GET['id_usuario'])) {
             $direcction = $row['direccion'];
             $place = $row['lugar_nacimiento'];
             $anahuac = $row['id_anahuac'];
+            $rol = $_POST['roles'];
         }
 }
 #seccion 2
@@ -37,8 +38,9 @@ if (isset($_POST['update'])) {
     $direcction = $_POST['direccion_usuario'];
     $place = $_POST['lugar_nacimiento_usuario'];
     $anahuac = $_POST['id_mayab'];
+    $rol = $_POST['rol'];
     $query = "UPDATE datos_personales SET nombre = '$name', apellido = '$last_name',email = '$email', 
-                                          telefono = '$telephone', direccion = '$direcction', lugar_nacimiento = '$place', id_anahuac = '$anahuac'
+                                          telefono = '$telephone', direccion = '$direcction', lugar_nacimiento = '$place', id_anahuac = '$anahuac', Roles = '$rol'
                                         WHERE datos_personales.id= $id";
     $result = mysqli_query($connection, $query);
     if(!$result) {
@@ -110,6 +112,12 @@ if (isset($_POST['update'])) {
                   <div class="form-group">
                       <input type="text" name="id_mayab" class="form-control" value="<?php echo $anahuac;?>" placeholder = "ID">
                   </div>
+                  <select name="rol" id="rol">
+                                    <option value="" disabled>--Rol--</option>
+                                    <option value="2">Alumno</option>
+                                    <option value="4">Responsable de proyecto</option>
+                                    <option value="3">Empresa</option>
+                  </select>
                   <a href="admin.php" class="btn-2">
                     volver
                   </a>

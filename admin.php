@@ -110,6 +110,12 @@ $rol = $row['rol'];
                                 <div class="form-group">
                                     <input type="text" name="id_usuario" class="form-control" placeholder="ID">
                                 </div>
+                                <select name="roles" id="roles">
+                                    <option value="" disabled>--Rol--</option>
+                                    <option value="2">Alumno</option>
+                                    <option value="4">Responsable de proyecto</option>
+                                    <option value="3">Empresa</option>
+                                </select>
                                 <input type="submit" name="save_task" class="btn btn-success btn-block" value="Guardar">
                             </form>
                        </div>
