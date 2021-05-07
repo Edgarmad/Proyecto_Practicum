@@ -8,7 +8,8 @@ if (isset($_POST['save_task_alumno'])) {
     $direcction = $_POST['direccion'];
     $place = $_POST['nacioEn'];
     $anahuac = $_POST['id_mayab'];
-    $query = "INSERT INTO datos_personales(nombre, apellido, email, telefono, direccion, lugar_nacimiento,id_anahuac) VALUES ('$name', '$last_name','$email', '$telephone','$direcction', '$place','$anahuac')";
+    $rol = 2;
+    $query = "INSERT INTO datos_personales(nombre, apellido, email, telefono, direccion, lugar_nacimiento,id_anahuac, Roles) VALUES ('$name', '$last_name','$email', '$telephone','$direcction', '$place','$anahuac','$rol')";
     $result = mysqli_query($connection, $query);
     if(!$result) {
         die("Query Failed.");
